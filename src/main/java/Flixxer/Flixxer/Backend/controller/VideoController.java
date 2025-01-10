@@ -1,6 +1,6 @@
-package Flixxer.Flixxer.Backend.Controller;
-import Flixxer.Flixxer.Backend.DB.Video;
-import Flixxer.Flixxer.Backend.VideoRepository;
+package Flixxer.Flixxer.Backend.controller;
+import Flixxer.Flixxer.Backend.models.Video;
+import Flixxer.Flixxer.Backend.repositories.VideoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;

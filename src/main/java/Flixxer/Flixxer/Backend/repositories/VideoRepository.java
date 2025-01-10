@@ -1,6 +1,6 @@
-package Flixxer.Flixxer.Backend;
+package Flixxer.Flixxer.Backend.repositories;
 
-import Flixxer.Flixxer.Backend.DB.Video;
+import Flixxer.Flixxer.Backend.models.Video;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
