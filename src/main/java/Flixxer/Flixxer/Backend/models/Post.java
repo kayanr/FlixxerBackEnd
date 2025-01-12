@@ -12,6 +12,11 @@ public class Post {
     @Column
     private String message;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+
     public Post() {
     }
 
@@ -35,4 +40,13 @@ public class Post {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }
