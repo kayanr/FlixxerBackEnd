@@ -2,13 +2,15 @@ package Flixxer.Flixxer.Backend.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 
 @Entity
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long userId;
+    private Long userId;
 
     @Column
     private String username;
@@ -31,14 +33,17 @@ public class User {
     @Column
     private String occupation;
 
+    @OneToMany(mappedBy = "user")
+    private List<Post> posts;
+
     public User() {
     }
 
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -97,4 +102,6 @@ public class User {
     public void setOccupation(String occupation) {
         this.occupation = occupation;
     }
+
+
 }
