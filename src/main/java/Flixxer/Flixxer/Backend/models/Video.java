@@ -37,6 +37,16 @@ public class Video {
         @Getter
         @Setter
         @Column
+        private String thumbnail;
+
+        @Getter
+        @Setter
+        @Column
+        private String videoURL;
+
+        @Getter
+        @Setter
+        @Column
         private String rating;
 
         @Getter
