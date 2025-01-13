@@ -32,6 +32,7 @@ public class PostController {
         Post updatePost = postRepository.findById(id).get();
 
         updatePost.setMessage(post.getMessage());
+        updatePost.setUser(post.getUser());
         postRepository.save(updatePost);
         return "Post updated!";
     }

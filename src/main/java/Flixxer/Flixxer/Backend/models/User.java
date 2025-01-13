@@ -36,6 +36,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Post> posts;
 
+
     public User() {
     }
 
@@ -103,5 +104,12 @@ public class User {
         this.occupation = occupation;
     }
 
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
 
 }
