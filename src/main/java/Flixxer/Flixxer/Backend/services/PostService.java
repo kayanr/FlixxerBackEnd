@@ -22,8 +22,7 @@ public class PostService {
     private UserRepository userRepo;
 
     public Post savePost(Post post) {
-        postRepo.save(post);
-        return post;
+        return postRepo.save(post);
     }
 
     public Post findPost(Long id) {
@@ -38,13 +37,10 @@ public class PostService {
         return postRepo.findPostByUserId(userId);
     }*/
 
-    //trying
-    @Transactional
     public Post savePostByUserId(Post post, Long userId) {
         User user = userRepo.findByUserId(userId);
         post.setUser(user);
-        postRepo.save(post);
-        return post;
+        return postRepo.save(post);
     }
 
 }

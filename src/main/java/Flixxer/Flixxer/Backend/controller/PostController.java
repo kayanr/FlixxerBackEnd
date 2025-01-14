@@ -11,9 +11,6 @@ import java.util.List;
 @RestController
 public class PostController {
 
-    //@Autowired
-    //private PostRepository postRepository;
-
     @Autowired
     PostService postService;
 
@@ -26,40 +23,13 @@ public class PostController {
    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value="/posts/save")
     public @ResponseBody Post savePost(@RequestBody Post post){
-        postService.savePost(post);
-        return post;
+        return postService.savePost(post);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(value="/posts/save/user/{userId}")
-    public @ResponseBody Post savePostById(@RequestBody Post post, @RequestParam Long userId){
-       // postService.savePostByUserId(post, userId);
-        return post;
+    public @ResponseBody Post savePostById(@RequestBody Post post, @PathVariable Long userId){
+       return postService.savePostByUserId(post, userId);
     }
-/*
-    @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping(value="/posts/user/{userId}")
-    public @ResponseBody List<Post> getPostsById(@PathVariable Long userId){
-        return postService.getPostsByUser(userId);
-    }
-
-   @CrossOrigin(origins = "http://localhost:3000")
-    @PutMapping(value="/posts/update/{id}")
-    public String updatePost(@PathVariable Long id,@RequestBody Post post){
-        Post updatePost = postRepository.findById(id).get();
-
-        updatePost.setMessage(post.getMessage());
-        updatePost.setUser(post.getUser());
-        postRepository.save(updatePost);
-        return "Post updated!";
-    }
-
-    @CrossOrigin(origins = "http://localhost:3000")
-    @DeleteMapping(value = "/posts/delete/{id}" )
-    public String deletePost(@PathVariable Long id) {
-        Post deletedPost = postRepository.findById(id).get();
-        postRepository.delete(deletedPost);
-        return "Post deleted";
-    } */
 
 }
