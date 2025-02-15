@@ -2,6 +2,9 @@ package Flixxer.Flixxer.Backend.models;
 
 import jakarta.persistence.*;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 @Entity
 public class Post {
 
@@ -9,10 +12,24 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    @Column
+    private Timestamp timestamp;
+
     @Column
     private String message;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Video video;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
 
@@ -47,5 +64,7 @@ public class Post {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public void setVideo(Video video) { this.video = video; }
 
 }
