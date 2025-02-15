@@ -12,14 +12,6 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    public Timestamp getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
-    }
-
     @Column
     private Timestamp timestamp;
 
@@ -39,6 +31,14 @@ public class Post {
     public Post(Long id, String message) {
         this.id = id;
         this.message = message;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 
     public Long getId() {
@@ -65,6 +65,8 @@ public class Post {
         this.user = user;
     }
 
-    public void setVideo(Video video) { this.video = video; }
+    public void setVideo(Video video) {
+        this.video = video;
+    }
 
 }
