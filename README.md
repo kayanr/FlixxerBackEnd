@@ -82,6 +82,58 @@ MySQL Database
 ```
 ---
 
+## API Endpoints Summary
+
+Below is a summary of key REST API endpoints provided by the backend.
+
+### User API
+
+| Method | Endpoint | Description |
+|------|---------|-------------|
+| GET | /users/all | Retrieve all users |
+| GET | /users/{id} | Retrieve user by ID |
+| POST | /users/save | Create a new user |
+| PUT | /users/update/{id} | Update a user |
+| DELETE | /users/delete/{id} | Delete a user |
+
+---
+
+### Video API
+
+| Method | Endpoint | Description |
+|------|---------|-------------|
+| GET | /videos | Retrieve all videos |
+| GET | /videos/{id} | Retrieve video by ID |
+| POST | /save | Create a new video |
+| PUT | /update/{content_id} | Update a video |
+| DELETE | /delete/{content_id} | Delete a video |
+
+---
+
+### Genre API
+
+| Method | Endpoint | Description |
+|------|---------|-------------|
+| GET | /api/genres | Retrieve all genres |
+| GET | /api/genres/{id} | Retrieve genre by ID |
+| POST | /api/genres/save | Create a new genre |
+| PUT | /api/genres/update/{id} | Update a genre |
+| DELETE | /api/genres/delete/{id} | Delete a genre |
+
+---
+
+### Post API
+
+| Method | Endpoint | Description |
+|------|---------|-------------|
+| GET | /posts/all | Retrieve all posts |
+| POST | /posts/save | Create a new post |
+| POST | /posts/save/user/{userId} | Create post for a user |
+| POST | /posts/save/{userId}/{videoId} | Create post for user and video |
+| GET | /posts/all/hotTake/{videoId} | Retrieve posts for a video |
+
+---
+
 ## Getting Started
 
 Follow these steps to run the backend locally.
@@ -166,7 +218,7 @@ Swagger provides interactive documentation for testing all API endpoints.
 
 • Video Management – upload, retrieve, and manage video content  
 • Comments – store and retrieve comments associated with videos  
-• Social Feed – create and retrieve tweets/posts  
+• Social Feed – create and retrieve posts  
 
 ---
 
