@@ -57,7 +57,6 @@ Database
 
 Frontend (team project)
 - React
-- JavaScript
 
 ---
 
